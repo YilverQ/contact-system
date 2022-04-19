@@ -1,0 +1,55 @@
+{
+    "Managers": [
+        {
+            "username": "sha256$1FjOBagoslAleMJw$a0da185b1f6f81098d4fe528371a99c2314eda1f495d5fc753c5597b01b7adb6",
+            "password": "sha256$ii44Y5IzNwmmg86Z$e58200f0b8d0dc44c0c8748a67c32d650636bcd9ca152e2f107ca16438c2cddf"
+        }
+    ],
+    "Users": [
+        {
+            "id": 1,
+            "username": "Yilver",
+            "email": "yilver@gmail.com",
+            "password": "sha256$iBne2zs6Gr4i05bh$5737a940aa181ef000e72c83fef6f31e589423544d9be0b71ed874cf0fb9be85"
+        },
+        {
+            "id": 2,
+            "username": "Winder",
+            "email": "winder@gmail.com",
+            "password": "sha256$OCG51tNgJ8IyhxUq$dc958621818d55a34ad79ebe578ba70bd1ef59ac32f8efa098264a1a78653768"
+        },
+        {
+            "id": 3,
+            "username": "Jair",
+            "email": "jair@gmail.com",
+            "password": "sha256$zhfyMv5tXI3eUhQ5$d122e7a2a1fa6da70334ec7621fcd439d5b28389f9e8ee65ea2728c151b26fc4"
+        }
+    ],
+    "Contacts": [
+        {
+            "username": "Yilver",
+            "contact_list": [
+                {
+                    "id": 1,
+                    "fullname": "Victoria",
+                    "email": "vicky@gmail.com",
+                    "phone": "04245567781"
+                },
+                {
+                    "id": 2,
+                    "fullname": "Mariana",
+                    "email": "marian12@gmail.com",
+                    "phone": "04246657780"
+                }
+            ]
+        },
+        {
+            "username": "Winder",
+            "contact_list": []
+        },
+        {
+            "username": "Jair",
+            "contact_list": []
+        }
+    ]
+}

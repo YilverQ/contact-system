@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% from "_macro.html" import render_field %}
+
+
+{% block content %}
+<form action="{{ data.redirect }}" method="POST">
+	{{ form.csrf_token }}
+	{{ render_field(form.username) }}
+	{{ render_field(form.password) }}
+	{{ form.submit }}
+</form>
+{% endblock %}

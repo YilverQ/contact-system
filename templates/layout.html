@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="author" content="Yilver Quevedo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Esta página es de practica para un sistema de contactos">
+
+	<!-- Title -->
+	<title>{{ data.title }}</title>
+
+	<!-- Links -->
+    <link rel="shortcut icon" type="image/x-icon"  href="{{ url_for('static', filename='img/favicon.png') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilos.css') }}">
+	
+</head>
+<body>
+	{{ data.title }}
+	{% block content %}
+	{% endblock %}
+</body>
+</html>
