@@ -12,7 +12,7 @@ class DAO:
 							port = 3306,
 							user = "root",
 							password = "root",
-							db = "contacto") #Datos para la conexión a la BD.
+							db = "contact") #Datos para la conexión a la BD.
 			self.cursor = self.conexion.cursor() #Cursos es fundamental para ejecurar sentencias SQL
 		except Error as ex:
 			print("Lo siento, ha ocurrido un error")

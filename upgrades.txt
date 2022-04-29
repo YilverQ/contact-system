@@ -13,3 +13,10 @@ Actualizaciones.
 Trabajo a futuro:
 	Hacer una interfaz gráfica con JS y CSS.
 	Poner soporte de cookies, session o en su defecto Tokens. 
+---------------------------------------------------------------------------------------
+
+Actualizaciones: 27/04/22.
+	** Poner las variables, métodos y clases en ingles. 
+	** Se modularizó toda la aplicación. 
+	** NUEVO: Carpetas -> web, models, api. 
+	** Se documentó la aplicación.
