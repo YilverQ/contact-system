@@ -1,6 +1,5 @@
 Actualizaciones.
 
-
 	Domingo 10/04/22.
 		** Se creó la base de datos.
 		** El programa utiliza el patrón MVC.
@@ -20,3 +19,6 @@ Actualizaciones: 27/04/22.
 	** Se modularizó toda la aplicación. 
 	** NUEVO: Carpetas -> web, models, api. 
 	** Se documentó la aplicación.
+
+
+COMENZAR A USAR ENTORNOS VIRTUALES!!!!! ES URGENTE!!!
