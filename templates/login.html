@@ -1,11 +1,13 @@
 {% extends "layout.html" %}
 {% from "_nav.html" import navLoginSingUp %}
+{% from "_macros.html" import flashed %}
 	
 	{% block nav %}	
 	{{ navLoginSingUp() }}
 	{% endblock %}
 
 	{% block content %}
+	{{ flashed() }}
 	<div class="main-container-form">
 	  	<form class="form shadow bg-body rounded">
 		    <h1 class="h3 mb-3 fw-normal text-center">Login</h1>

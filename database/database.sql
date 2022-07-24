@@ -1,11 +1,11 @@
--- Tablas SQL
+-- Tables SQL
 
--- 1. Crear base de datos;
+-- 1. Create a database;
 CREATE DATABASE contact;
 use contact;
 
--- 2. Crear Tablas.
--- 2.1 Usuario.
+-- 2. Create Tables.
+-- 2.1 User.
 CREATE TABLE User(
 	id int(3) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name varchar(30) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE User(
 	password varchar(30) NOT NULL
 )ENGINE=InnoDB;
 
--- 2.2 Contacto.
+-- 2.2 Contact.
 CREATE TABLE Contact(
 	id int(3) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	num_phone varchar(30) NOT NULL,

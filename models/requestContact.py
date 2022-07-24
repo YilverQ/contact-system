@@ -1,4 +1,4 @@
-#Atendemos la petición POST o PUT para devolver un diccionario.
+#We attend the POST or PUT request to return a dictionary.
 def data_request(jsonData):
 	new_contact = {
 		"num_phone" : jsonData["num_phone"],

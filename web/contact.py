@@ -2,6 +2,14 @@ from flask import Blueprint
 
 contactSite = Blueprint("contactSite", __name__)
 
+#createContact
 @contactSite.route("/contact")
-def index():
-	return "<h1>Hola Desde una página web.</h1>"
+def create_user():
+	data = {"title":"Create User"}
+	return render_template('singUp.html', data=data)
+
+
+#readContact
+#updateUser
+#deleteUser
+#readContact

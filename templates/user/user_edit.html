@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% from "_nav.html" import navUserAdmin %}
+{% from "_macros.html" import flashed %}
+	
+	{% block nav %}	
+	{{ navUserAdmin() }}
+	{% endblock %}
+
+	{% block content %}
+	<div class="container">
+		<h1 class="content__title">{{ data["title"] }}</h1>
+	    <form action="/upd-user/{{ data['user'][0] }}" method="POST">
+	    	<button class="btn btn-primary" type="submit">Update New Values</button>
+
+			<a class="" href="{{ url_for('userSite.users') }}" role="button">Back</a>
+			{{ flashed() }}
+			<table class="container table">
+			  <thead>
+			    <tr>
+			      <th scope="col">Element</th>
+			      <th scope="col">Value</th>
+			      <th scope="col">New Valor</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    	<tr>
+				      	<th scope="row">Name</th>
+				      	<td>{{ data["user"][1] }}</td>
+				    	<td>
+				      		<input type="text" name="name" class="form__input" required id="floatingInput" placeholder="name">
+				      </td>
+				    </tr>
+				    <tr>
+				      	<th scope="row">Last Name</th>
+				      	<td>{{ data["user"][2] }}</td>
+				    	<td>
+				      		<input type="text" name="last_name" class="form__input" required id="floatingPassword" placeholder="lastname">
+				      </td>
+				    </tr>
+				    <tr>
+				      	<th scope="row">Email</th>
+				      	<td>{{ data["user"][3] }}</td>
+				    	<td>
+				      		<input type="email" name="email" class="form__input" required id="floatingInput" placeholder="name@example.com">
+				      </td>
+				    </tr>
+				    <tr>
+				      	<th scope="row">Password</th>
+				      	<td>{{ data["user"][4] }}</td>
+				    	<td>
+				      		<input type="password" name="password" class="form__input" required id="floatingInput" placeholder="Password">
+				      </td>
+				    </tr>
+			  </tbody>
+			</table>
+	    </form>
+	</div>
+	{% endblock %}

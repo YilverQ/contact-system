@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% from "_nav.html" import navLoginSingUp %}
+	
+	{% block nav %}	
+	{{ navLoginSingUp() }}
+	{% endblock %}
+
+	{% block content %}
+	<div class="main-container-form">
+	  	<form class="form shadow bg-body rounded" action="{{ url_for('userSite.singUp') }}" method="POST">
+		    <h1 class="h3 mb-3 fw-normal text-center">Sign Up</h1>
+	    	<i class="form__i bi bi-people"></i>
+		    <div class="form__block">
+		      <input type="text" name="name" class="form__input" required id="floatingInput" placeholder="name">
+		    </div>
+		    <div class="form__block">
+		      <input type="text" name="last_name" class="form__input" required id="floatingPassword" placeholder="lastname">
+		    </div>
+		    <div class="form__block">
+		      <input type="email" name="email" class="form__input" required id="floatingInput" placeholder="name@example.com">
+		    </div>
+		    <div class="form__block">
+		      <input type="password" name="password" class="form__input" required id="floatingInput" placeholder="Password">
+		    </div>
+		    <button class="form__botton btn btn-primary" type="submit">Sign Up</button>
+	  	</form>
+	</div>
+	{% endblock %}

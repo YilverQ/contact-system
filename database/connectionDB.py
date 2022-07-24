@@ -4,16 +4,16 @@ from mysql.connector import Error
 
 """DAO = Data Access Object"""
 class DAO:
-	"""Conexión con la base de datos"""
+	"""Connection with the database"""
 	def __init__(self):
-		try: #Hace un intento de conexión
+		try: #Try a connection.
 			self.conexion = mysql.connector.connect(
 							host = "localhost",
 							port = 3306,
 							user = "root",
 							password = "root",
-							db = "contact") #Datos para la conexión a la BD.
-			self.cursor = self.conexion.cursor() #Cursos es fundamental para ejecurar sentencias SQL
-		except Error as ex:
+							db = "contact") #Data for to connection.
+			self.cursor = self.conexion.cursor() #cursor is essential to execute SQL statements
+		except Error as ex: #In case of connection failure
 			print("Lo siento, ha ocurrido un error")
 			print(f"Error: {ex}")

@@ -2,15 +2,15 @@ from database.connectionDB import DAO
 
 
 class UserDB(DAO):
-	"""CRUD-Usuario"""
+	"""CRUD-User"""
 	###########################################
-	#Obtiene una lista completa de los usuarios.
+	#Get all user from database.
 	def read_users(self):
 		self.cursor.execute("Select * from User;")
 		return self.cursor.fetchall() #Obtiene todos las filas de la tabla. 
 
 
-	#Crea un usuario con los datos pasados.
+	#Create a new user with past data.
 	def create_user(self, data):
 		"""
 			data = {
@@ -19,13 +19,13 @@ class UserDB(DAO):
 		"""
 		insert	 = """Insert INTO User (name, last_name, email, password)"""
 		values	 = f"""VALUES ('{data["name"]}', '{data["last_name"]}', '{data["email"]}', '{data["password"]}');"""
-		sentence = insert + " " + values #'sentence' es la sentencia SQL a ejecutar.
+		sentence = insert + " " + values #'Sentence SQL to execute.
 		self.cursor.execute(sentence)
 		self.conexion.commit()
-		return "Usuario Registrado Sastifactoriamente"
+		return "User has registered successfully."
 
 
-	#Actualiza los datos de un usuario.
+	#Update data to user with "idUser".
 	def update_user(self, idUser, data):
 		"""
 			data = {
@@ -34,28 +34,28 @@ class UserDB(DAO):
 		"""
 		dataUpdate = f"""name = '{data["name"]}', last_name = '{data["last_name"]}', email = '{data["email"]}', password = '{data["password"]}'"""
 		sentence 	= f"Update User set {dataUpdate} WHERE id = {idUser}"; 
-		self.cursor.execute(sentence) #Se actualiza toda la fila.
+		self.cursor.execute(sentence) #Update all the row.
 		self.conexion.commit()
-		return "Usuario Actualizado Sastifactoriamente"
+		return "User has updated successfully."
 
 
-	#Elimina una fila de la tabla usuario.
+	#Delete one row from table User.
 	def delete_user(self, idUser):
 		sentence = f"""Delete FROM User WHERE id = {idUser};"""
-		self.cursor.execute(sentence) #Elimina toda la fila.
+		self.cursor.execute(sentence) #Delete row.
 		self.conexion.commit()
-		return f"Usuario {idUser} Ha Sido Eliminado Sastifactoriamente"
+		return f"User {idUser} has deleted successfully."
 
 
-	#Obtiene solo la fila donde se encuentra el correoElectronico.
+	#Get a only user with email equal "email".
 	def read_mail_user(self, email):
 		sentence = f"Select * FROM User WHERE email = '{email}';"
 		self.cursor.execute(sentence)
-		return self.cursor.fetchone() #retorna una sola fila
+		return self.cursor.fetchone() #return user.
 
 
-	#Obtiene la fila del usuario con el id pasado como parametro.
+	#Get a only user by idUser.
 	def read_id_user(self, idUser):
 		sentence = f"Select * FROM User WHERE id = '{idUser}';"
 		self.cursor.execute(sentence)
-		return self.cursor.fetchone() #retorna muchas filas.
+		return self.cursor.fetchone() #return user.

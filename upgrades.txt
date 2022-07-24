@@ -20,5 +20,9 @@ Actualizaciones: 27/04/22.
 	** NUEVO: Carpetas -> web, models, api. 
 	** Se documentó la aplicación.
 
-
-COMENZAR A USAR ENTORNOS VIRTUALES!!!!! ES URGENTE!!!
+Actualizaciones: 23/07/22.
+	** Se creó un entorno virtual. 
+	** Se instalaron las dependencias del documento requeriments.txt. 
+	** Poner código y comentarios en ingles.
+	//No se está usando la libreria requests.
+	//Se comenzó a trabajar la interfaz web.

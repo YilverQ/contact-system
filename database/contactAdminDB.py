@@ -2,15 +2,15 @@ from database.connectionDB import DAO
 
 
 class ContactAdminDB(DAO):
-	"""CRUD Para el administrador en Contacto"""
+	"""CRUD For the administrator in Contact"""
 	##########################################
-	#Obtiene una lista completa de los contactos.
-	def __read_contact(self): #Método privado.
+	#Get a complete list of contacts.
+	def __read_contact(self): #Private method.
 		self.cursor.execute("Select * from Contact;")
 		return self.cursor.fetchall()
 
 
-	#Crea un contacto con los datos pasados.
+	#Create a new contact.
 	def create_contact(self, data):
 		"""
 			data = {
@@ -23,10 +23,10 @@ class ContactAdminDB(DAO):
 		sentence = usuario + " " + values
 		self.cursor.execute(sentence)
 		self.conexion.commit()
-		return "Contacto Registrado Sastifactoriamente"
+		return "Contact has created successfully."
 
 
-	#Actualiza los datos de un contacto.
+	#Update a contact with id is equal "id_contact".
 	def update_contact(self, id_contact, data):
 		"""
 			data = {
@@ -38,12 +38,12 @@ class ContactAdminDB(DAO):
 		sentence 	= f"Update Contact set {dataUpdate} WHERE id = {id_contact};";
 		self.cursor.execute(sentence)
 		self.conexion.commit()
-		return "Contacto Actualizado Sastifactoriamente"
+		return "Contact has  successfully."
 
 
-	#Elimina una fila de la tabla contacto.
+	#Delete contact with id is equal "id_contact".
 	def delete_contact(self, id_contact):
 		sentence = f"""Delete FROM Contact WHERE id = {id_contact};"""
 		self.cursor.execute(sentence)
 		self.conexion.commit()
-		return f"Contacto {id_contact} Ha Sido Eliminado Sastifactoriamente"
+		return f"Contact {id_contact} has deleted successfully."
