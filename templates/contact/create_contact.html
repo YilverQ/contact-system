@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% from "_nav.html" import navUser %}
+{% from "_macros.html" import flashed %}
+	
+	{% block nav %}	
+	{{ navUser() }}
+	{% endblock %}
+
+	{% block content %}
+	{{ flashed() }}
+    <div class="main-container-form">
+	  	<form class="form shadow bg-body rounded" action="{{ url_for('contactSite.create_contact') }}" method="POST">
+		    <h1 class="h3 mb-3 fw-normal text-center">New Contact</h1>
+	    	<i class="form__i bi bi-people"></i>
+		    <div class="form__block">
+		      <input type="text" name="name_contact" class="form__input" required id="floatingPassword" placeholder="Name contact">
+		    </div>
+		    <div class="form__block">
+		      <input type="text" name="num_phone" class="form__input" required id="floatingInput" placeholder="number phone">
+		    </div>
+		    <button class="form__botton btn btn-primary" type="submit">Create</button>
+	  	</form>
+	</div>
+	{% endblock %}

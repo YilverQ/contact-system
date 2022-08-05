@@ -9,7 +9,7 @@
 	{% block content %}
 	<div class="container">
 		<h1 class="content__title">Users</h1>
-		<a class="btn btn-primary" href="{{ url_for('userSite.singUp') }}" role="button">Create New User</a>
+		<a class="btn btn-primary" href="{{ url_for('register.singUp') }}" role="button">Create New User</a>
 		{{ flashed() }}
 		<table class="container table">
 		  <thead>
@@ -29,7 +29,7 @@
 		    	<td>
 		      		<ul class="d-grid gap-3 colum d-flex nav nav-pills">
 					  <li class="nav-item">
-					    <a class="btn btn-primary" aria-current="page" href="#">Read</a>
+					    <a class="btn btn-primary" aria-current="page" href="/read-user/{{ i[0] }}">Read</a>
 					  </li>
 					  <li class="nav-item">
 					    <a class="btn btn-info" href="/upd-user/{{ i[0] }}">Edit</a>

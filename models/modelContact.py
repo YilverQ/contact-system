@@ -33,6 +33,15 @@ class Model_Contact:
 			return f"User with id {id_user} not exist."
 
 
+	#Find and return contact with id "id_contact"
+	def read_only_id(self, id_contact):
+		data = self.object.read_id_contact(id_contact) #Search user. 
+		if data: #return values.
+			return data
+		else:
+			return f"User with id {id_user} does not exist."
+
+
 	#Update contact with the data passed by parameters.
 	def update(self, id_contact, new_data):
 		"""

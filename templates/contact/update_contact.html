@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% from "_nav.html" import navUser %}
+{% from "_macros.html" import flashed %}
+	
+	{% block nav %}	
+	{{ navUser() }}
+	{% endblock %}
+
+	{% block content %}
+    <div class="container">
+		<h1 class="content__title">{{ data["title"] }}</h1>
+	    <form action="/upd-contact/{{ data['contact'][0] }}" method="POST">
+	    	<button class="btn btn-primary" type="submit">Update New Values</button>
+
+			<a class="" href="{{ url_for('contactSite.read_contact') }}" role="button">Back</a>
+			{{ flashed() }}
+			<table class="container table">
+			  <thead>
+			    <tr>
+			      <th scope="col">Element</th>
+			      <th scope="col">Value</th>
+			      <th scope="col">New Valor</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    	<tr>
+				      	<th scope="row">Name contact</th>
+				      	<td>{{ data["contact"][2] }}</td>
+				    	<td>
+				      		<input type="text" name="name_contact" class="form__input" required id="floatingInput" placeholder="Name contact">
+				      </td>
+				    </tr>
+				    <tr>
+				      	<th scope="row">Number phone</th>
+				      	<td>{{ data["contact"][1] }}</td>
+				    	<td>
+				      		<input type="text" name="num_phone" class="form__input" required id="floatingInput" placeholder="Number phone">
+				      </td>
+				    </tr>
+			  </tbody>
+			</table>
+	    </form>
+	</div>
+	{% endblock %}

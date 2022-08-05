@@ -1,8 +1,8 @@
-#import requests
 from flask import Blueprint
 from flask import render_template, request, url_for, flash, redirect
 from models.modelUser import Model_User
 from models.requestUser import data_request_POST
+from models.modelContact import Model_Contact
 
 
 #blueprints
@@ -11,24 +11,11 @@ userSite = Blueprint("userSite", __name__)
 
 #Objeto Global.
 obj_user = Model_User()
+obj_contact = Model_Contact()
 
 
 """Rutas"""
 #----------------------------------------------
-
-#SingUp
-#Create a new user
-@userSite.route("/SingUp", methods = ["GET", "POST"])
-def singUp():
-	if request.method == 'POST':
-		new_user = data_request_POST(request.form) #data from request (POST).
-		message = obj_user.create(new_user)
-		flash(f'{message}')
-		return redirect(url_for('login'))
-
-	data = {"title":"Sing Up"}
-	return render_template('singUp.html', data=data)
-
 
 #Read all users
 @userSite.route("/users", methods = ["GET"])
@@ -65,5 +52,7 @@ def delete_user(id_user):
 #Read only user.
 @userSite.route("/read-user/<int:id_user>")
 def read_only_user(id_user):
-	data = {"title":f"User by id {id_user}"}
-	return render_template('user.html', data=data)
+	user = obj_user.read_only_id(id_user)
+	contacts = obj_contact.read(id_user)
+	data = {"title":f"User data with ID {id_user}", "user" : user, "contacts" : contacts}
+	return render_template('user/user.html', data=data)

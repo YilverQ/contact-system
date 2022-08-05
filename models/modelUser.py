@@ -29,6 +29,15 @@ class Model_User(UserDB):
 			return f"User with id {id_user} does not exist."
 
 
+	#Find and return user with id "email"
+	def read_mail_user(self, email):
+		data = self.object.read_mail_user(email) #Search user. 
+		if data: #return values.
+			return data
+		else:
+			return f"User with id {email} does not exist."
+
+
 	#Return all user in the database.
 	def read(self):
 		return self.object.read_users()

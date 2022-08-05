@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% from "_nav.html" import navUser %}
+{% from "_macros.html" import flashed %}
+	
+	{% block nav %}	
+	{{ navUser() }}
+	{% endblock %}
+
+	{% block content %}
+	{{ flashed() }}
+    <div class="container">
+		<h1 class="content__title">Home Page</h1>
+		<a class="btn btn-primary" href="{{ url_for('contactSite.create_contact') }}" role="button">Create New Contact</a>
+		<table class="container table">
+		  <thead>
+		    <tr>
+		      <th scope="col">ID</th>
+		      <th scope="col">Name contact</th>
+		      <th scope="col">Number phone</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    	{%for i in data["contacts"] %}
+			    <tr>
+			      	<th scope="row">{{ i[0] }}</th>
+			    	<td>{{ i[2] }}</td>
+			      	<td>{{ i[1] }}</td>
+			      	<td>
+			      		<ul class="d-grid gap-3 colum d-flex nav nav-pills">
+						  <li class="nav-item">
+						    <a class="btn btn-info" href="/upd-contact/{{ i[0] }}">Edit</a>
+						  </li>
+						  <li class="nav-item">
+						  	<form>
+						    <a class="btn btn-danger" href="/del-contact/{{ i[0] }}">Delete</a>
+						  	</form>
+						  </li>
+						</ul>
+			      </td>
+			    </tr>
+				{%endfor%}
+		  </tbody>
+		</table>
+	</div>
+	{% endblock %}

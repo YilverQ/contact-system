@@ -9,8 +9,8 @@
 		    </a>
 		  	</div>
 		  	<div class="col-md-auto">
-		    	<a href="{{ url_for('userSite.singUp') }}" class="btn btn-primary btn btn-light" role="button" aria-disabled="true">Sing Up</a>
-				<a href="{{ url_for('login') }}" class="btn btn-secondary btn btn-dark" role="button" aria-disabled="true">Login</a>
+		    	<a href="{{ url_for('register.singUp') }}" class="btn btn-primary btn btn-light" role="button" aria-disabled="true">Sing Up</a>
+				<a href="{{ url_for('register.login') }}" class="btn btn-secondary btn btn-dark" role="button" aria-disabled="true">Login</a>
 		  	</div>
 		  </div>
 		</nav>
@@ -30,6 +30,25 @@
 		  	<div class="col-md-auto">
 		    	<a href="{{ url_for('userSite.users') }}" class="btn btn-primary btn btn-light" role="button" aria-disabled="true">Users</a>
 				<a href="{{ url_for('index') }}" class="btn btn-secondary btn btn-dark" role="button" aria-disabled="true">Exit</a>
+		  	</div>
+		  </div>
+		</nav>
+	</header>
+{% endmacro %}
+
+{% macro navUser() %}
+	<header>
+		<nav class="navbar bg-light">
+		  <div class="container">
+		  	<div class="col-md-auto">
+		     <a class="navbar-brand" href="{{ url_for('index') }}">
+	     		<i class="fa-solid fa-address-book"></i>
+			    Contact System
+		    </a>
+		  	</div>
+		  	<div class="col-md-auto">
+		    	<a href="{{ url_for('contactSite.read_contact') }}" class="btn btn-primary btn btn-light" role="button" aria-disabled="true">Contacts</a>
+				<a href="{{ url_for('exit') }}" class="btn btn-secondary btn btn-dark" role="button" aria-disabled="true">Exit</a>
 		  	</div>
 		  </div>
 		</nav>
